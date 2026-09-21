@@ -6,6 +6,7 @@
 <title>GATE DESK — 안내데스크 출입 통제 게임</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:,">
 <style>
   :root{
     --bg: #DCE9F8;
@@ -36,9 +37,9 @@
     font-family: var(--font-body);
     min-height: 100vh;
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:center;
-    padding: 20px;
+    padding: calc(20px + env(safe-area-inset-top, 0px)) 20px calc(20px + env(safe-area-inset-bottom, 0px)) 20px;
   }
   .wrap{
     width: 100%;
@@ -897,7 +898,6 @@
   });
   els.retryBtn.addEventListener('click', function(){
     setScreen('start');
-    setTimeout(startRound, 0);
   });
   els.soundToggle.addEventListener('click', function(){
     state.settings.sound = !state.settings.sound;
@@ -928,4 +928,3 @@
 </script>
 </body>
 </html>
-
